@@ -1,9 +1,9 @@
 class Kodrik < Formula
   desc "Personal AI companion for terminal, Telegram and browser"
   homepage "https://github.com/suinly/kodrik"
-  url "https://github.com/suinly/kodrik/releases/download/v0.3.0/kodrik-0.3.0-aarch64-apple-darwin.tar.gz"
-  version "0.3.0"
-  sha256 "3d661266a26e54aef25df07745625d92ff267af3342d018ebedd426e85115ff0"
+  url "https://github.com/suinly/kodrik/releases/download/v0.3.1/kodrik-0.3.1-aarch64-apple-darwin.tar.gz"
+  version "0.3.1"
+  sha256 "28b8cdd6c76cae6cd6a02f6ccf8e9f93c9356fd90e73c3748f0061fec1caa75b"
 
   head do
     url "https://github.com/suinly/kodrik.git", branch: "main"
@@ -62,7 +62,7 @@ class Kodrik < Formula
   end
 
   test do
-    expected_version = build.head? ? "kodrik " : "kodrik 0.3.0"
+    expected_version = build.head? ? "kodrik " : "kodrik 0.3.1"
     assert_match expected_version, shell_output("#{bin}/kodrik --version")
     result = JSON.parse(shell_output("#{bin}/kodrik invites list"))
     assert_empty result.fetch("invites")
